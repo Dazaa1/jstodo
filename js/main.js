@@ -9,24 +9,26 @@ const removeButton = document.createElement('button');
 editButton.textContent = "Edit";
 removeButton.textContent = "Remove";
 
-
-
-// add a click event to the button
-addButton.addEventListener("click", () => {
+const createListItems = () => {
     const li = document.createElement('li');
-
     li.textContent = userInput.value;
+    li.appendChild(editButton);
+    li.appendChild(removeButton);
+    return li;
+}
+
+const checkEmptyString = (li) => {
     if (!li.textContent) {
         console.log("empty string");
     }
-
-    else {
-        li.appendChild(editButton);
-        li.appendChild(removeButton);
-        userInput.value = "";
-        ul.appendChild(li);
-        body.appendChild(ul);
-    }
-
+}
+// add a click event to the button
+addButton.addEventListener("click", () => {
+    li = createListItems();
+    checkEmptyString(li);    
+    
+    userInput.value = "";
+    ul.appendChild(li);
+    body.appendChild(ul);
+    
 })
-
