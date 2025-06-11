@@ -6,7 +6,8 @@ const body = document.querySelector('body');
 const editButton = document.createElement('button');
 const removeButton = document.createElement('button');
 
-editButton.textContent = ""
+editButton.textContent = "Edit";
+removeButton.textContent = "Remove";
 
 
 
@@ -18,7 +19,7 @@ addButton.addEventListener("click", () => {
     if (!li.textContent) {
         console.log("empty string");
     }
-    
+
     else {
         li.appendChild(editButton);
         li.appendChild(removeButton);
